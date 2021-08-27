@@ -247,7 +247,7 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                             </div>
     <div class="breadcomb-report" style="text-align: left; padding-left: 1rem;">     
     <button type="submit" name="update" value="update" class="btn notika-btn-success">Update</button>
-    <button type="reset" class="btn btn-danger">Cancel</button>
+    <a href="boot1.php"><button type="button" class="btn btn-danger">Cancel</button></a>
     </div>
   </form>
   </div>
