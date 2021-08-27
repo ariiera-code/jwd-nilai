@@ -1,6 +1,6 @@
 <?php
 // include database connection file
-include_once("config.php");
+include_once("koneksi.php");
 
 // Check if form is submitted for user update, then redirect to homepage after update
 if (isset($_POST['update'])) {
@@ -14,7 +14,7 @@ if (isset($_POST['update'])) {
   $n3 = $_POST['n3'];
 
   // update user data
-  $result = mysqli_query($mysqli, "UPDATE tsiswa_20 SET nim='$nim',nama='$nama',alamat='$alamat',n1='$n1',n2='$n2',n3='$n3' WHERE id=$id");
+  $result = mysqli_query($konek, "UPDATE tsiswa_20 SET nim='$nim',nama='$nama',alamat='$alamat',n1='$n1',n2='$n2',n3='$n3' WHERE id=$id");
 
   // Redirect to homepage to display updated user in list
   header("Location: index.php");
@@ -26,7 +26,7 @@ if (isset($_POST['update'])) {
 $id = $_GET['id'];
 
 // Fetech user data based on id
-$result = mysqli_query($mysqli, "SELECT * FROM tsiswa_20 WHERE id=$id");
+$result = mysqli_query($konek, "SELECT * FROM nilais WHERE id=$id");
 
 
 while ($user_data = mysqli_fetch_array($result)) {

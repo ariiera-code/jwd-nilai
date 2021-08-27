@@ -63,7 +63,9 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="logo-area">
-              <a href="#"><img src="img/logo/logo.png" alt="" /></a>
+              <a href="#">
+                <h3 style="margin:0; color:#fff;padding-top:0.2rem;">Kelompok 3</h3>
+              </a>
             </div>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 d-lg-none">
@@ -142,14 +144,32 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                       <i class="notika-icon notika-windows"></i>
                     </div>
                     <div class="breadcomb-ctn">
-                      <h2>Data Table</h2>
+                      <h2>Data Nilai Siswa DTS KOMINFO</h2>
                       <p>Selamat datang di Data Nilai Siswa DTS</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
                   <div class="breadcomb-report">
-                    <a href="add.php" data-toggle="tooltip" data-placement="left" title="Tambah Data" class="btn"><i class="notika-icon notika-sent"></i></a>
+                    <button type="button" data-toggle="modal" data-target="#myModalone" data-placement="left" title="Tambah Data" class="btn"><i class="notika-icon notika-sent"></i></button>
+                    <div class="modal fade" id="myModalone" role="dialog">
+                      <div class="modal-dialog modals-default">
+                        <div class="modal-content" style="text-align: left;">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div>
+                          <div class="modal-body">
+                            <h2>Modal title</h2>
+                            <p>Curabitur blandit mollis lacus. Nulla sit amet est. Suspendisse nisl elit, rhoncus eget, elementum ac, condimentum eget, diam. Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Cras sagittis.</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Save changes</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalone">Modal Default</button>
                   </div>
                 </div>
               </div>
@@ -224,8 +244,8 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                         <td><?= $grade; ?></td>
                         <td><?= $predikat; ?></td>
                         <td>
-                          <a href='edit.php?id=$user_data[id]'>Edit</a>
-                          <a href='delete.php?id=$user_data[id]'>Delete</a>
+                          <a href='edit.php?id=<?= $user_data['id']; ?>'>Edit</a>
+                          <a href='delete.php?id=<?= $user_data['id']; ?>'>Delete</a>
                         </td>
                       </tr>
 
@@ -268,11 +288,6 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
         </div>
       </div>
     </div>
-    <script>
-      $(document).ready(function() {
-        $('#tabel_data').DataTable();
-      });
-    </script>
     <!-- End Footer area-->
     <!-- jquery
 		============================================ -->

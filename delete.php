@@ -1,12 +1,12 @@
 <?php
 // include database connection file
-include_once("config.php");
+include_once("koneksi.php");
 
 // Get id from URL to delete that user
 $id = $_GET['id'];
 
 // Delete user row from table based on given id
-$result = mysqli_query($mysqli, "DELETE FROM tsiswa_20 WHERE id=$id");
+$result = mysqli_query($konek, "DELETE FROM nilais WHERE id=$id");
 
 // After delete redirect to Home, so that latest user list will be displayed.
-header("Location:index.php");
+header("Location:boot1.php");
