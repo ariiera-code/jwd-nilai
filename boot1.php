@@ -150,6 +150,7 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+<<<<<<< HEAD
                   <div class="breadcomb-report">
                     <button type="button" data-toggle="modal" data-target="#myModalone" data-placement="left" title="Tambah Data" class="btn"><i class="notika-icon notika-sent"></i></button>
                     <div class="modal fade" id="myModalone" role="dialog">
@@ -170,6 +171,10 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                       </div>
                     </div>
                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalone">Modal Default</button>
+=======
+                  <div class="breadcomb-report">                                        
+                    <a href="add.php" class="btn">Add Data</a>
+>>>>>>> e48022365ac19d56a0f960ca86543bdeb538c55e
                   </div>
                 </div>
               </div>
