@@ -124,7 +124,7 @@ while ($user_data = mysqli_fetch_array($result)) {
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="logo-area">
-              <a href="#">
+              <a href="boot1.php">
                 <h3 style="margin:0; color:#fff;padding-top:0.2rem;">Kelompok 3</h3>
               </a>
             </div>
@@ -264,7 +264,8 @@ while ($user_data = mysqli_fetch_array($result)) {
                                     </div>
                                 </div>
                             </div>
-    <div class="breadcomb-report" style="text-align: left; padding-left: 1rem;">     
+    <div class="breadcomb-report" style="text-align: left; padding-left: 1rem;">
+    <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>     
     <button type="submit" name="update" value="update" class="btn notika-btn-success">Update</button>
     <a href="boot1.php"><button type="button" class="btn btn-danger">Cancel</button></a>
     </div>
