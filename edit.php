@@ -1,14 +1,39 @@
 <?php
-session_start();
-include 'koneksi.php';
-if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
-  ?>
-  <script language="JavaScript">
-    document.location = 'index.php';
-  </script>
+include_once("koneksi.php");
+
+// Check if form is submitted for user update, then redirect to homepage after update
+if (isset($_POST['update'])) {
+  $id = $_POST['id'];
+  $nim = $_POST['nim'];
+  $nama = $_POST['nama'];
+  $alamat = $_POST['alamat'];
+  $n1 = $_POST['n1'];
+  $n2 = $_POST['n2'];
+  $n3 = $_POST['n3'];
+
+  // update user data
+  $result = mysqli_query($konek, "UPDATE nilais SET nim='$nim',nama='$nama',alamat='$alamat',n1='$n1',n2='$n2',n3='$n3' WHERE id=$id");
+
+  // Redirect to homepage to display updated user in list
+  header("Location: boot1.php");
+}
+
+?>
 <?php
-} else {
-  ?>
+$id = $_GET['id'];
+
+$result = mysqli_query($konek, "SELECT * FROM nilais WHERE id=$id");
+
+
+while ($user_data = mysqli_fetch_array($result)) {
+  $nim = $user_data['nim'];
+  $nama = $user_data['nama'];
+  $alamat = $user_data['alamat'];
+  $n1 = $user_data['n1'];
+  $n2 = $user_data['n2'];
+  $n3 = $user_data['n3'];
+}
+?>
 <html>
 
 <head>
@@ -180,8 +205,8 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                       <i class="notika-icon notika-windows"></i>
                     </div>
                     <div class="breadcomb-ctn">
-                      <h2>Form Tambah Data</h2>
-                      <p>Pendaftaran Data ada disini</p>
+                      <h2>Form Edit Data</h2>
+                      <p>Pengeditan Data ada disini</p>
                     </div>
                   </div>
                 </div>
@@ -195,13 +220,12 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
 
   <div class="breadcomb-area">
   <div class="container">  
-  <form action="add.php" method="POST">  
+  <form action="edit.php" method="POST">  
     <div class="form-element-list">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <div class="form-group float-lb">
                                     <div class="nk-int-st">
                                         <input type="text" class="form-control" name="nim" value=<?php echo $nim; ?>>
-                                        <label class="nk-label">NIM</label>
                                     </div>
                                 </div>
                             </div>
@@ -209,7 +233,6 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                                 <div class="form-group float-lb">
                                     <div class="nk-int-st">
                                         <input type="text" class="form-control" name="nama" value=<?php echo $nama; ?>>
-                                        <label class="nk-label">Nama</label>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +240,6 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                                 <div class="form-group float-lb">
                                     <div class="nk-int-st">
                                         <input type="text" class="form-control" name="alamat" value=<?php echo $alamat; ?>>
-                                        <label class="nk-label">Alamat</label>
                                     </div>
                                 </div>
                             </div>
@@ -225,7 +247,6 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                                 <div class="form-group float-lb">
                                     <div class="nk-int-st">
                                         <input type="text" class="form-control" name="n1" value=<?php echo $n1; ?>>
-                                        <label class="nk-label">Nilai Harian</label>
                                     </div>
                                 </div>
                             </div>
@@ -233,7 +254,6 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                                 <div class="form-group float-lb">
                                     <div class="nk-int-st">
                                         <input type="text" class="form-control" name="n2" value=<?php echo $n2; ?>>
-                                        <label class="nk-label">Nilai MID TEST</label>
                                     </div>
                                 </div>
                             </div>
@@ -241,7 +261,6 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                                 <div class="form-group float-lb">
                                     <div class="nk-int-st">
                                         <input type="text" class="form-control" name="n3" value=<?php echo $n3; ?>>
-                                        <label class="nk-label">Nilai Final TEST</label>
                                     </div>
                                 </div>
                             </div>
@@ -251,41 +270,7 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
     </div>
   </form>
   </div>
-  <?php
-include_once("koneksi.php");
 
-// Check if form is submitted for user update, then redirect to homepage after update
-if (isset($_POST['update'])) {
-  $id = $_POST['id'];
-  $nim = $_POST['nim'];
-  $nama = $_POST['nama'];
-  $alamat = $_POST['alamat'];
-  $n1 = $_POST['n1'];
-  $n2 = $_POST['n2'];
-  $n3 = $_POST['n3'];
-
-  // update user data
-  $result = mysqli_query($konek, "UPDATE nilais SET nim='$nim',nama='$nama',alamat='$alamat',n1='$n1',n2='$n2',n3='$n3' WHERE id=$id");
-
-  // Redirect to homepage to display updated user in list
-  header("Location: index.php");
-}
-?>
-<?php
-$id = $_GET['id'];
-
-$result = mysqli_query($konek, "SELECT * FROM nilais WHERE id=$id");
-
-
-while ($user_data = mysqli_fetch_array($result)) {
-  $nim = $user_data['nim'];
-  $nama = $user_data['nama'];
-  $alamat = $user_data['alamat'];
-  $n1 = $user_data['n1'];
-  $n2 = $user_data['n2'];
-  $n3 = $user_data['n3'];
-}
-?>
   </div>
   <!-- End Footer area-->
     <!-- jquery
@@ -390,6 +375,3 @@ while ($user_data = mysqli_fetch_array($result)) {
 </body>
 
 </html>
-<?php
-}
-?>
