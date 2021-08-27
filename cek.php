@@ -31,4 +31,4 @@ if ($pasmd5 == $data['password']) {
 		alert('Password yang Anda masukkan salah');
 		document.location = 'index.php';
 	</script><?php
-						} ?>
+} ?>
