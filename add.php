@@ -51,18 +51,18 @@
     $n3 = $_POST['n3'];
 
     // include database connection file
-    include_once("config.php");
+    include_once("koneksi.php");
 
     // Insert user data into table
-    $ambil_id = mysqli_query($mysqli, "SELECT id FROM tsiswa_20 ORDER BY id DESC LIMIT 1");
+    $ambil_id = mysqli_query($konek, "SELECT id FROM nilais ORDER BY id DESC LIMIT 1");
     $row_id = mysqli_fetch_array($ambil_id);
     $hasil_id = $row_id['id'];
     $id = $hasil_id + 1;
-    $result = mysqli_query($mysqli, "INSERT INTO tsiswa_20(id,nim,nama,alamat,n1,n2,n3) VALUES('$id','$nim','$nama','$alamat','$n1','$n2','$n3')");
+    $result = mysqli_query($konek, "INSERT INTO nilais(id,nim,nama,alamat,n1,n2,n3) VALUES('$id','$nim','$nama','$alamat','$n1','$n2','$n3')");
 
 
     // Show message when user added
-    echo "User added successfully. <a href='index.php'>View Data</a>";
+    echo "User added successfully. <a href='boot1.php'>View Data</a>";
   }
   ?>
 </body>
