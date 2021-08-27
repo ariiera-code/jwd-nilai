@@ -150,26 +150,8 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                  <div class="breadcomb-report">
-                    <button type="button" data-toggle="modal" data-target="#myModalone" data-placement="left" title="Tambah Data" class="btn"><i class="notika-icon notika-sent"></i></button>
-                    <div class="modal fade" id="myModalone" role="dialog">
-                      <div class="modal-dialog modals-default">
-                        <div class="modal-content" style="text-align: left;">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          </div>
-                          <div class="modal-body">
-                            <h2>Modal title</h2>
-                            <p>Curabitur blandit mollis lacus. Nulla sit amet est. Suspendisse nisl elit, rhoncus eget, elementum ac, condimentum eget, diam. Donec mi odio, faucibus at, scelerisque quis, convallis in, nisi. Cras sagittis.</p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Save changes</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModalone">Modal Default</button>
+                  <div class="breadcomb-report">                                        
+                    <a href="add.php" class="btn">Add Data</a>
                   </div>
                 </div>
               </div>
