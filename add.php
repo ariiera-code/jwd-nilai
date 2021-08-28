@@ -29,53 +29,18 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
     <!-- font awesome CSS
 		============================================ -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- owl.carousel CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
     <!-- meanmenu CSS
 		============================================ -->
     <link rel="stylesheet" href="css/meanmenu/meanmenu.min.css">
-    <!-- animate CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- summernote CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/summernote/summernote.css">
-    <!-- Range Slider CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/themesaller-forms.css">
-    <!-- normalize CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/normalize.css">
     <!-- mCustomScrollbar CSS
 		============================================ -->
     <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
     <!-- Notika icon CSS
 		============================================ -->
     <link rel="stylesheet" href="css/notika-custom-icon.css">
-    <!-- bootstrap select CSS
+    <!-- Data Table JS
 		============================================ -->
-    <link rel="stylesheet" href="css/bootstrap-select/bootstrap-select.css">
-    <!-- datapicker CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/datapicker/datepicker3.css">
-    <!-- Color Picker CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/color-picker/farbtastic.css">
-    <!-- main CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/chosen/chosen.css">
-    <!-- notification CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/notification/notification.css">
-    <!-- dropzone CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/dropzone/dropzone.css">
-    <!-- wave CSS
-		============================================ -->
-    <link rel="stylesheet" href="css/wave/waves.min.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <!-- main CSS
 		============================================ -->
     <link rel="stylesheet" href="css/main.css">
@@ -85,9 +50,6 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="css/responsive.css">
-    <!-- modernizr JS
-		============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
 
   <body>
@@ -105,7 +67,7 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 d-lg-none">
             <div class="header-top-menu">
               <ul class="nav navbar-nav notika-top-nav">
-                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
+                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span></a>
                   <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
                     <div class="hd-mg-tt">
                       <h2>Profile</h2>
@@ -119,6 +81,17 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                           <div class="hd-mg-ctn">
                             <h3><?php echo $_SESSION['username']; ?></h3>
                             <p>Role : <?php echo $_SESSION['level'] ?></p>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="https://github.com/ariiera-code/jwd-nilai" target="__blank">
+                        <div class="hd-message-sn">
+                          <div class="hd-message-img chat-img">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="" />
+                          </div>
+                          <div class="hd-mg-ctn">
+                            <h3>Repository (Drop star, thanks)</h3>
+                            <p>https://github.com/ariiera-code/jwd-nilai</p>
                           </div>
                         </div>
                       </a>
@@ -147,14 +120,14 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                   </li>
                   <li><a data-toggle="collapse" data-target="#demoevent" href="#">Data</a>
                     <ul id="demoevent" class="collapse dropdown-header-top">
-                      <li><a href="inbox.html">Nilai</a></li>
-                      <li><a href="view-email.html">User</a></li>
+                      <li><a href="boot1.php">Nilai</a></li>
+                      <li><a href="#">User</a></li>
                     </ul>
                   </li>
                   <li><a data-toggle="collapse" data-target="#democrou" href="#">Profile</a>
                     <ul id="democrou" class="collapse dropdown-header-top">
-                      <li><a href="animations.html">My Profile</a></li>
-                      <li><a href="google-map.html">Logout</a></li>
+                      <li><a href="#">My Profile</a></li>
+                      <li><a href="logout.php">Logout</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -191,92 +164,113 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
     </div>
     <!-- Breadcomb area End-->
 
-    <div class="breadcomb-area">
+    <div class="breadcomb-area" style="margin-bottom:0;">
       <div class="container">
-        <form action="add.php" method="POST">
-          <div class="form-element-list">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="form-group float-lb">
-                <div class="nk-int-st">
-                  <input type="text" class="form-control" name="nim">
-                  <label class="nk-label">NIM</label>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="breadcomb-list">
+              <form action="add.php" method="POST">
+                <div class="form-example-int">
+                  <div class="form-group">
+                    <label>NIM</label>
+                    <div class="nk-int-st">
+                      <input type="text" name="nim" class="form-control input-sm" placeholder="ex. JWD009">
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="form-group float-lb">
-                <div class="nk-int-st">
-                  <input type="text" class="form-control" name="nama">
-                  <label class="nk-label">Nama</label>
+                <div class="form-example-int">
+                  <div class="form-group">
+                    <label>Nama</label>
+                    <div class="nk-int-st">
+                      <input type="text" name="nama" class="form-control input-sm" placeholder="ex. Kevin">
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="form-group float-lb">
-                <div class="nk-int-st">
-                  <input type="text" class="form-control" name="alamat">
-                  <label class="nk-label">Alamat</label>
+                <div class="form-example-int">
+                  <div class="form-group">
+                    <label>Alamat</label>
+                    <div class="nk-int-st">
+                      <textarea class="form-control auto-size" name="alamat" rows="2" placeholder="Masukkan alamat siswa..."></textarea>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="form-group float-lb">
-                <div class="nk-int-st">
-                  <input type="text" class="form-control" name="n1">
-                  <label class="nk-label">Nilai Harian</label>
+                <div class="form-example-int">
+                  <div class="form-group">
+                    <label>Nilai Harian</label>
+                    <div class="nk-int-st">
+                      <input type="number" name="n1" class="form-control input-sm" placeholder="0 - 100">
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="form-group float-lb">
-                <div class="nk-int-st">
-                  <input type="text" class="form-control" name="n2">
-                  <label class="nk-label">Nilai MID TEST</label>
+                <div class="form-example-int">
+                  <div class="form-group">
+                    <label>Nilai Mid Test</label>
+                    <div class="nk-int-st">
+                      <input type="number" name="n2" class="form-control input-sm" placeholder="0 - 100">
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <div class="form-group float-lb">
-                <div class="nk-int-st">
-                  <input type="text" class="form-control" name="n3">
-                  <label class="nk-label">Nilai Final TEST</label>
+                <div class="form-example-int">
+                  <div class="form-group">
+                    <label>Nilai Funal Test</label>
+                    <div class="nk-int-st">
+                      <input type="number" name="n3" class="form-control input-sm" placeholder="0 - 100">
+                    </div>
+                  </div>
                 </div>
-              </div>
+
+                <div class="form-example-int mg-t-15">
+                  <button type="submit" name="Submit" value="Submit" class="btn" data-type="success">Submit</button>
+                  <button type="reset" class="btn btn-danger">Cancel</button>
+                </div>
+              </form>
+              <?php
+
+                // Check If form submitted, insert form data into users table.
+                if (isset($_POST['Submit'])) {
+                  $nim = $_POST['nim'];
+                  $nama = $_POST['nama'];
+                  $alamat = $_POST['alamat'];
+                  $n1 = $_POST['n1'];
+                  $n2 = $_POST['n2'];
+                  $n3 = $_POST['n3'];
+
+                  // include database connection file
+                  include_once "koneksi.php";
+
+                  // Insert user data into table
+                  $ambil_id = mysqli_query($konek, "SELECT id FROM nilais ORDER BY id DESC LIMIT 1");
+                  $row_id = mysqli_fetch_array($ambil_id);
+                  $hasil_id = $row_id['id'];
+                  $id = $hasil_id + 1;
+                  $result = mysqli_query($konek, "INSERT INTO nilais(id,nim,nama,alamat,n1,n2,n3) VALUES('$id','$nim','$nama','$alamat','$n1','$n2','$n3')");
+
+                  // Show message when user added
+                  echo '<div class="alert alert-success alert-dismissible" role="alert" style="margin-top: 1rem;">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="notika-icon notika-close"></i></span></button> Data nilai telah ditambahkan! <a href="boot1.php">View Data</a>
+                </div>';
+                }
+                ?>
             </div>
-            <div class="breadcomb-report" style="text-align: left; padding-left: 1rem;">
-              <button type="submit" name="Submit" value="Submit" class="btn">Submit</button>
-              <button type="reset" class="btn">Cancel</button>
-            </div>
-        </form>
+          </div>
+        </div>
       </div>
     </div>
 
-
-    <?php
-
-      // Check If form submitted, insert form data into users table.
-      if (isset($_POST['Submit'])) {
-        $nim = $_POST['nim'];
-        $nama = $_POST['nama'];
-        $alamat = $_POST['alamat'];
-        $n1 = $_POST['n1'];
-        $n2 = $_POST['n2'];
-        $n3 = $_POST['n3'];
-
-        // include database connection file
-        include_once "koneksi.php";
-
-        // Insert user data into table
-        $ambil_id = mysqli_query($konek, "SELECT id FROM nilais ORDER BY id DESC LIMIT 1");
-        $row_id = mysqli_fetch_array($ambil_id);
-        $hasil_id = $row_id['id'];
-        $id = $hasil_id + 1;
-        $result = mysqli_query($konek, "INSERT INTO nilais(id,nim,nama,alamat,n1,n2,n3) VALUES('$id','$nim','$nama','$alamat','$n1','$n2','$n3')");
-
-        // Show message when user added
-        echo "User added successfully. <a href='boot1.php'>View Data</a>";
-      }
-      ?>
+    <!-- Start Footer area-->
+    <div class="footer-copyright-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="footer-copy-right">
+              <p>Copyright © 2021
+                <span><a href="https://github.com/ariiera-code/jwd-nilai">DTS Kelompok 3</a></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- End Footer area-->
     <!-- jquery
 		============================================ -->
@@ -284,99 +278,24 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
     <!-- bootstrap JS
 		============================================ -->
     <script src="js/bootstrap.min.js"></script>
-    <!-- wow JS
-		============================================ -->
-    <script src="js/wow.min.js"></script>
-    <!-- price-slider JS
-		============================================ -->
-    <script src="js/jquery-price-slider.js"></script>
-    <!-- owl.carousel JS
-		============================================ -->
-    <script src="js/owl.carousel.min.js"></script>
     <!-- scrollUp JS
 		============================================ -->
     <script src="js/jquery.scrollUp.min.js"></script>
     <!-- meanmenu JS
 		============================================ -->
     <script src="js/meanmenu/jquery.meanmenu.js"></script>
-    <!-- counterup JS
-		============================================ -->
-    <script src="js/counterup/jquery.counterup.min.js"></script>
-    <script src="js/counterup/waypoints.min.js"></script>
-    <script src="js/counterup/counterup-active.js"></script>
     <!-- mCustomScrollbar JS
 		============================================ -->
     <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- sparkline JS
+    <!-- autosize JS
 		============================================ -->
-    <script src="js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/sparkline/sparkline-active.js"></script>
-    <!-- flot JS
-		============================================ -->
-    <script src="js/flot/jquery.flot.js"></script>
-    <script src="js/flot/jquery.flot.resize.js"></script>
-    <script src="js/flot/flot-active.js"></script>
-    <!-- knob JS
-		============================================ -->
-    <script src="js/knob/jquery.knob.js"></script>
-    <script src="js/knob/jquery.appear.js"></script>
-    <script src="js/knob/knob-active.js"></script>
-    <!-- Input Mask JS
-		============================================ -->
-    <script src="js/jasny-bootstrap.min.js"></script>
-    <!-- icheck JS
-		============================================ -->
-    <script src="js/icheck/icheck.min.js"></script>
-    <script src="js/icheck/icheck-active.js"></script>
-    <!-- rangle-slider JS
-		============================================ -->
-    <script src="js/rangle-slider/jquery-ui-1.10.4.custom.min.js"></script>
-    <script src="js/rangle-slider/jquery-ui-touch-punch.min.js"></script>
-    <script src="js/rangle-slider/rangle-active.js"></script>
-    <!-- datapicker JS
-		============================================ -->
-    <script src="js/datapicker/bootstrap-datepicker.js"></script>
-    <script src="js/datapicker/datepicker-active.js"></script>
-    <!-- bootstrap select JS
-		============================================ -->
-    <script src="js/bootstrap-select/bootstrap-select.js"></script>
-    <!--  color-picker JS
-		============================================ -->
-    <script src="js/color-picker/farbtastic.min.js"></script>
-    <script src="js/color-picker/color-picker.js"></script>
-    <!--  notification JS
-		============================================ -->
-    <script src="js/notification/bootstrap-growl.min.js"></script>
-    <script src="js/notification/notification-active.js"></script>
-    <!--  summernote JS
-		============================================ -->
-    <script src="js/summernote/summernote-updated.min.js"></script>
-    <script src="js/summernote/summernote-active.js"></script>
-    <!-- dropzone JS
-		============================================ -->
-    <script src="js/dropzone/dropzone.js"></script>
-    <!--  wave JS
-		============================================ -->
-    <script src="js/wave/waves.min.js"></script>
-    <script src="js/wave/wave-active.js"></script>
-    <!--  chosen JS
-		============================================ -->
-    <script src="js/chosen/chosen.jquery.js"></script>
-    <!--  Chat JS
-		============================================ -->
-    <script src="js/chat/jquery.chat.js"></script>
-    <!--  todo JS
-		============================================ -->
-    <script src="js/todo/jquery.todo.js"></script>
+    <script src="js/autosize.min.js"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="js/plugins.js"></script>
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
-    <!-- tawk chat JS
-		============================================ -->
-    <script src="js/tawk-chat.js"></script>
   </body>
 
   </html>

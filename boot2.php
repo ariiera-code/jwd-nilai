@@ -71,7 +71,7 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '2') {
           <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 d-lg-none">
             <div class="header-top-menu">
               <ul class="nav navbar-nav notika-top-nav">
-                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
+                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-support"></i></span></a>
                   <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
                     <div class="hd-mg-tt">
                       <h2>Profile</h2>
@@ -85,6 +85,17 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '2') {
                           <div class="hd-mg-ctn">
                             <h3><?php echo $_SESSION['username']; ?></h3>
                             <p>Role : <?php echo $_SESSION['level'] ?></p>
+                          </div>
+                        </div>
+                      </a>
+                      <a href="https://github.com/ariiera-code/jwd-nilai" target="__blank">
+                        <div class="hd-message-sn">
+                          <div class="hd-message-img chat-img">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="" />
+                          </div>
+                          <div class="hd-mg-ctn">
+                            <h3>Repository (Drop star, thanks)</h3>
+                            <p>https://github.com/ariiera-code/jwd-nilai</p>
                           </div>
                         </div>
                       </a>
@@ -109,16 +120,16 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '2') {
             <div class="mobile-menu">
               <nav id="dropdown">
                 <ul class="mobile-menu-nav">
-                  <li><a href="boot1.php">Home</a>
+                  <li><a href="boot2.php">Home</a>
                   </li>
                   <li><a data-toggle="collapse" data-target="#demoevent" href="#">Data</a>
                     <ul id="demoevent" class="collapse dropdown-header-top">
-                      <li><a href="inbox.html">Nilai</a></li>
+                      <li><a href="boot2.php">Nilai</a></li>
                     </ul>
                   </li>
                   <li><a data-toggle="collapse" data-target="#democrou" href="#">Profile</a>
                     <ul id="democrou" class="collapse dropdown-header-top">
-                      <li><a href="animations.html">My Profile</a></li>
+                      <li><a href="#">My Profile</a></li>
                       <li><a href="logout.php">Logout</a></li>
                     </ul>
                   </li>
@@ -252,7 +263,8 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '2') {
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="footer-copy-right">
               <p>Copyright © 2021
-                Kelompok 3</p>
+                <span><a href="https://github.com/ariiera-code/jwd-nilai">DTS Kelompok 3</a></span>
+              </p>
             </div>
           </div>
         </div>

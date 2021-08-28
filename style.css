@@ -4638,3 +4638,11 @@ body.box-layout {
     display: none;
   }
 }
+
+.btn.btn-login.btn-success.btn-float{
+    background-color: #272727;
+}
+
+.btn.btn-login.btn-success.btn-float:hover{
+    background-color: #111111;
+}
