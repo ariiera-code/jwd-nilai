@@ -63,7 +63,7 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="logo-area">
-              <a href="#">
+              <a href="boot1.php">
                 <h3 style="margin:0; color:#fff;padding-top:0.2rem;">Kelompok 3</h3>
               </a>
             </div>
@@ -150,7 +150,7 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                  <div class="breadcomb-report">                                        
+                  <div class="breadcomb-report">
                     <a href="add.php" class="btn">Add Data</a>
                   </div>
                 </div>
