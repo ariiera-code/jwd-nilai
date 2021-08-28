@@ -15,7 +15,7 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login Register | Notika - Notika Admin Template</title>
+    <title>Tambah Akun Admin</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -110,6 +110,10 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
                 <input type="password" class="form-control" placeholder="Password" name="password">
               </div>
             </div>
+            <div style="margin-bottom: 2rem;"></div>
+            <a href="boot1.php" class="btn">
+              <i class="notika-icon notika-left-arrow left-arrow-ant"></i><a href="boot1.php" style="padding-top: 1rem;">Kembali ke Data Nilai</a>
+            </a>
             <button type="submit" name="register" value="Register" class="btn btn-login btn-success btn-float"><i class="notika-icon notika-right-arrow right-arrow-ant"></i></button>
         </form>
       </div>
