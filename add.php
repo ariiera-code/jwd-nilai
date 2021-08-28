@@ -9,9 +9,9 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
 <?php
 } else {
   ?>
-<html>
+  <html>
 
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Form Components | Notika - Notika Admin Template</title>
@@ -88,11 +88,11 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
     <!-- modernizr JS
 		============================================ -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-</head>
+  </head>
 
-<body>
-  <!-- Start Header Top Area -->
-  <div class="header-top-area">
+  <body>
+    <!-- Start Header Top Area -->
+    <div class="header-top-area">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -191,93 +191,93 @@ if ($_SESSION['username'] == '' || $_SESSION['level'] != '1') {
     </div>
     <!-- Breadcomb area End-->
 
-  <div class="breadcomb-area">
-  <div class="container">  
-  <form action="add.php" method="POST">  
-    <div class="form-element-list">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group float-lb">
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" name="nim">
-                                        <label class="nk-label">NIM</label>
-                                    </div>
-                                </div>
-                            </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group float-lb">
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" name="nama">
-                                        <label class="nk-label">Nama</label>
-                                    </div>
-                                </div>
-                            </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group float-lb">
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" name="alamat">
-                                        <label class="nk-label">Alamat</label>
-                                    </div>
-                                </div>
-                            </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group float-lb">
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" name="n1">
-                                        <label class="nk-label">Nilai Harian</label>
-                                    </div>
-                                </div>
-                            </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group float-lb">
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" name="n2">
-                                        <label class="nk-label">Nilai MID TEST</label>
-                                    </div>
-                                </div>
-                            </div>
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <div class="form-group float-lb">
-                                    <div class="nk-int-st">
-                                        <input type="text" class="form-control" name="n3">
-                                        <label class="nk-label">Nilai Final TEST</label>
-                                    </div>
-                                </div>
-                            </div>
-    <div class="breadcomb-report" style="text-align: left; padding-left: 1rem;">     
-    <button type="submit" name="Submit" value="Submit" class="btn">Submit</button>
-    <button type="reset" class="btn">Cancel</button>
+    <div class="breadcomb-area">
+      <div class="container">
+        <form action="add.php" method="POST">
+          <div class="form-element-list">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group float-lb">
+                <div class="nk-int-st">
+                  <input type="text" class="form-control" name="nim">
+                  <label class="nk-label">NIM</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group float-lb">
+                <div class="nk-int-st">
+                  <input type="text" class="form-control" name="nama">
+                  <label class="nk-label">Nama</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group float-lb">
+                <div class="nk-int-st">
+                  <input type="text" class="form-control" name="alamat">
+                  <label class="nk-label">Alamat</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group float-lb">
+                <div class="nk-int-st">
+                  <input type="text" class="form-control" name="n1">
+                  <label class="nk-label">Nilai Harian</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group float-lb">
+                <div class="nk-int-st">
+                  <input type="text" class="form-control" name="n2">
+                  <label class="nk-label">Nilai MID TEST</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="form-group float-lb">
+                <div class="nk-int-st">
+                  <input type="text" class="form-control" name="n3">
+                  <label class="nk-label">Nilai Final TEST</label>
+                </div>
+              </div>
+            </div>
+            <div class="breadcomb-report" style="text-align: left; padding-left: 1rem;">
+              <button type="submit" name="Submit" value="Submit" class="btn">Submit</button>
+              <button type="reset" class="btn">Cancel</button>
+            </div>
+        </form>
+      </div>
     </div>
-  </form>
-  </div>
-  </div>
 
 
-  <?php
+    <?php
 
-// Check If form submitted, insert form data into users table.
-if (isset($_POST['Submit'])) {
-    $nim = $_POST['nim'];
-    $nama = $_POST['nama'];
-    $alamat = $_POST['alamat'];
-    $n1 = $_POST['n1'];
-    $n2 = $_POST['n2'];
-    $n3 = $_POST['n3'];
+      // Check If form submitted, insert form data into users table.
+      if (isset($_POST['Submit'])) {
+        $nim = $_POST['nim'];
+        $nama = $_POST['nama'];
+        $alamat = $_POST['alamat'];
+        $n1 = $_POST['n1'];
+        $n2 = $_POST['n2'];
+        $n3 = $_POST['n3'];
 
-    // include database connection file
-    include_once "koneksi.php";
+        // include database connection file
+        include_once "koneksi.php";
 
-    // Insert user data into table
-    $ambil_id = mysqli_query($konek, "SELECT id FROM nilais ORDER BY id DESC LIMIT 1");
-    $row_id = mysqli_fetch_array($ambil_id);
-    $hasil_id = $row_id['id'];
-    $id = $hasil_id + 1;
-    $result = mysqli_query($konek, "INSERT INTO nilais(id,nim,nama,alamat,n1,n2,n3) VALUES('$id','$nim','$nama','$alamat','$n1','$n2','$n3')");
+        // Insert user data into table
+        $ambil_id = mysqli_query($konek, "SELECT id FROM nilais ORDER BY id DESC LIMIT 1");
+        $row_id = mysqli_fetch_array($ambil_id);
+        $hasil_id = $row_id['id'];
+        $id = $hasil_id + 1;
+        $result = mysqli_query($konek, "INSERT INTO nilais(id,nim,nama,alamat,n1,n2,n3) VALUES('$id','$nim','$nama','$alamat','$n1','$n2','$n3')");
 
-    // Show message when user added
-    echo "User added successfully. <a href='boot1.php'>View Data</a>";
-}
-?>
-  <!-- End Footer area-->
+        // Show message when user added
+        echo "User added successfully. <a href='boot1.php'>View Data</a>";
+      }
+      ?>
+    <!-- End Footer area-->
     <!-- jquery
 		============================================ -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
@@ -374,12 +374,12 @@ if (isset($_POST['Submit'])) {
     <!-- main JS
 		============================================ -->
     <script src="js/main.js"></script>
-	<!-- tawk chat JS
+    <!-- tawk chat JS
 		============================================ -->
     <script src="js/tawk-chat.js"></script>
-</body>
+  </body>
 
-</html>
+  </html>
 <?php
 }
 ?>
