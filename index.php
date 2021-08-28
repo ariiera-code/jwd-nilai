@@ -33,24 +33,26 @@
             <img src="img/portal/logo.png" class="logo">
             <h1 class="atas h3">Halo! Selamat Datang!</h1>
           </div>
-          <div class="text-input text-left pt-4">
-            <div class="form-group"><label>Username</label>
-              <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Enter username" required="yes">
-            </div>
-            <div class="form-group"><label>Password</label>
-              <div class="input-group">
-                <input type="password" name="password" id="password" class="form-control" data-toggle="password" placeholder="Password" required="yes">
+          <form id="login-form" class="form" method="post" action="cek.php">
+            <div class="text-input text-left pt-4">
+              <div class="form-group"><label>Username</label>
+                <input type="text" class="form-control form-control-user" id="username" name="username" placeholder="Enter username" required="yes">
               </div>
-            </div>
-            <div class="form-row pt-4">
-              <div class="col-1"></div>
-              <div class="col-10 border d-flex justify-content-center" style="background-color:#f19933; cursor:pointer; height: 60px;">
-                <div class="text-center font-weight-bold text-light my-auto">Login
+              <div class="form-group"><label>Password</label>
+                <div class="input-group">
+                  <input type="password" name="password" id="password" class="form-control" data-toggle="password" placeholder="Password" required="yes">
                 </div>
               </div>
-              <div class="col-1"></div>
+              <div class="form-row pt-4">
+                <div class="col-1"></div>
+                <div class="col-10 border d-flex justify-content-center" style="background-color:#f19933; cursor:pointer; height: 60px;">
+                  <button type="submit" class="text-center font-weight-bold text-light my-auto">Login
+                  </button>
+                </div>
+                <div class="col-1"></div>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
 
